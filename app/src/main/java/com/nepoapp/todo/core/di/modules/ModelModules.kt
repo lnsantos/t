@@ -1,12 +1,16 @@
 package com.nepoapp.todo.core.di.modules
 
-import org.koin.core.Koin
+import com.nepoapp.todo.core.repository.LastAccessLocalRepository
+import com.nepoapp.todo.source.model.ModelSplash
 import org.koin.dsl.module
 
 class ModelModules {
-    companion object{
-        val start = module{
 
-        }
+    val build = module {
+
+    }
+
+    companion object{
+        val start = ModelModules().build
     }
 }

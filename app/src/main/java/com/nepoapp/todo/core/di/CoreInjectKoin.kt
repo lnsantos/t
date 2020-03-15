@@ -1,9 +1,8 @@
 package com.nepoapp.todo.core.di
 
 import android.app.Application
-import com.nepoapp.todo.core.di.modules.ModelModules
-import com.nepoapp.todo.core.di.modules.ViewModelModules
-import com.nepoapp.todo.core.di.modules.ViewModules
+import com.nepoapp.todo.core.di.modules.*
+import kotlinx.coroutines.coroutineScope
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
@@ -15,8 +14,9 @@ class CoreInjectKoin {
                 androidContext(application)
                 modules(
                     ViewModules.start,
-                    ModelModules.start,
-                    ViewModelModules.start
+                    ViewModelModules.start,
+                    DatabaseModules.start,
+                    RepositoryModules.start
                 )
             }
         }

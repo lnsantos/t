@@ -11,6 +11,11 @@ android {
 
     dataBinding.enabled = true
 
+    // excluir o módulo de funções atômicas da embalagem e evitar avisos.
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+
     defaultConfig {
         applicationId "com.nepoapp.todo"
         minSdkVersion 21
@@ -68,6 +73,9 @@ dependencies {
     //Coroutine
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.4'
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.4'
+
+    // Material
+    implementation "com.google.android.material:material:$material_design_version"
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
